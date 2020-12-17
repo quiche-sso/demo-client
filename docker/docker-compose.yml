@@ -13,7 +13,7 @@ services:
       - ../.env
     labels:
       - traefik.enable=true
-      - traefik.http.routers.API_QUICHE_SSO_CLIENT.rule=Host(`demo.sso.maxencemottard.com`)
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT.rule=Host(`demo.maxencemottard.com`)
       - traefik.http.routers.API_QUICHE_SSO_CLIENT.entrypoints=http
       - traefik.http.routers.API_QUICHE_SSO_CLIENT.middlewares=https-redirect@file
       - traefik.http.routers.API_QUICHE_SSO_CLIENT-Https.rule=Host(`demo.maxencemottard.com`)
