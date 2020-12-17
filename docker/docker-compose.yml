@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  quichesso_api_demo:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    container_name: quichesso_demo_nodejs
+    restart: always
+    networks:
+      - reverse-proxy
+    env_file:
+      - ../.env
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT.rule=Host(`demo.sso.maxencemottard.com`)
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT.entrypoints=http
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT.middlewares=https-redirect@file
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT-Https.rule=Host(`demo.maxencemottard.com`)
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT-Https.entrypoints=https
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT-Https.middlewares=security@file, compression@file
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT-Https.tls=true
+      - traefik.http.routers.API_QUICHE_SSO_CLIENT-Https.tls.certresolver=letsencrypt
+
+networks:
+  reverse-proxy:
+    external: true

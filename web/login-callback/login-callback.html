@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <title>Client de Quiche SSO</title>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <h1 style="color: white" class="title">Client de l'application Quiche SSO</h1>
+    <div>
+      <button type="button" class="btn btn-primary" id="signin-button">Connexion</button>
+      <button type="button" class="btn btn-primary" id="signup-button">Inscription</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <div class="input-group mb-3">
+    <span class="input-group-text">Token</span>
+    <input type="text" class="form-control" aria-describedby="basic-addon3" disabled id="token-input">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text">Refresh Token</span>
+    <input type="text" class="form-control" aria-describedby="basic-addon3" disabled id="refreshToken-input">
+  </div>
+
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4" style="overflow: hidden">
+        <img style="transform: translateX(-25%)" src="https://cdn.discordapp.com/attachments/788422763291213866/789169743235383336/Capture_decran_2020-12-17_a_17.38.43.png" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title" id="user-name"></h5>
+          <p class="card-text" id="user-mail"></p>
+          <p class="card-text"><small class="text-muted" id="user-id"></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+<script src="/login-callback/login-callback.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>-->
+</html>
