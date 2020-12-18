@@ -38,5 +38,14 @@
                 idElement.innerText = `id: ${user._id}`
             })
 
+        fetch('/data', {
+            method: 'GET',
+            headers: { authorization: token },
+        })
+            .then(result => result.json())
+            .then(data => {
+                console.log(data)
+            })
+
     });
 })()
