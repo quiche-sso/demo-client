@@ -3,8 +3,8 @@
         const signupButton = document.querySelector('#signup-button');
         const signinButton = document.querySelector('#signin-button');
 
-        const redirect_url = `${window.location.origin}/login-callback`
-        const public_key = 'pub_cf0e6283ca55af43944a4d49f9a09c7efb696a78c947e298339495c1ccc7edb1acdc0938cf3b1e032617538e8a4cc2bdcb80'
+        const redirect_url = `http://localhost:5000/login-callback`
+        const public_key = 'pub_642abc8e03eced3bfcfd9df43e2ff8655e2b270aaebdf66ef36782ddfd436b81ce2e72997a6df003ed5664634aea17a5707b'
 
         function handleSignin(e) {
             e.preventDefault();

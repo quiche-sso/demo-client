@@ -51,7 +51,7 @@ const data = [
 ];
 
 const middleware = async (req, res, next) => {
-    const privateKey = 'priv_e27cef4a141a8201ed7914586646b183754947ee0e611433fe1dffea3037631e97bf8e893a4d08bb9f5384125340c30e8fc8';
+    const privateKey = 'priv_4bf8689d8d563b3fcbc4f7009f5141fdcc80c601423b97d2110614c9d585eba54dc6ef852127ecc87e11b97f19798252a072';
     const url = 'https://api.sso.maxencemottard.com/api/token/verify';
 
     if (!req.headers.authorization) {
@@ -66,7 +66,6 @@ const middleware = async (req, res, next) => {
 
         next();
     } catch (e) {
-        console.log(e)
         res.status(e.response.status).json(e.response.data.error)
     }
 }
