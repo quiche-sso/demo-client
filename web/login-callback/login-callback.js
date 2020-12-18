@@ -12,6 +12,14 @@
         const mailElement = document.querySelector('#user-mail');
         const idElement = document.querySelector('#user-id');
 
+        const editProfileButton = document.querySelector('#edit-profil-button');
+
+        editProfileButton.addEventListener('click', (e) => {
+            e.preventDefault()
+
+            window.open('https://sso.maxencemottard.com/profile', '_blank')
+        })
+
         function setInputs(token, refreshToken) {
             tokenInput.value = token
             refreshTokenInput.value = refreshToken
